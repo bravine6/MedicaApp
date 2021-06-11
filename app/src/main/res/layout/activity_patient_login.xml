@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Patient Login"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="50sp"
+        android:paddingLeft="50dp"
+        android:paddingStart="50dp"
+        tools:ignore="HardcodedText,RtlSymmetry" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/emailaddresspatient"
+        android:background="@drawable/sb"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:hint="Enter Email Address"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
+        android:inputType="text"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        tools:ignore="TextFields"
+        android:paddingStart="20dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/paswwordpatient"
+        android:background="@drawable/sb"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:hint="Password"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
+        android:inputType="textPassword"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:id="@+id/loginpatient" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account?Register"
+        android:layout_marginTop="189dp"
+        android:textColor="@color/cardview_dark_background"
+        android:id="@+id/registeraccountpatient"
+        android:layout_gravity="center"/>
+
+
+
+</LinearLayout>

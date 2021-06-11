@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <androidx.cardview.widget.CardView
+
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20px"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PATIENT INFORMATION"
+                android:padding="10dp"
+                android:textSize="30dp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="DISEASE"
+                android:id="@+id/admindisease"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="SYMTOMS"
+                android:id="@+id/adminsymtoms"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="MEDICINE"
+                android:id="@+id/adminmedicine"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="SECOND NAME"
+                android:id="@+id/adminemail"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="SECOND NAME"
+                android:id="@+id/adminstatus"
+                />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/report"
+            android:background="@drawable/sb"
+            android:paddingLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:hint="Diagnosis report"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:layout_marginBottom="10dp"
+            android:inputType="textMultiLine"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:paddingStart="20dp" />
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:id="@+id/app"
+
+            android:text="SEND"/>
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/dis"
+            android:layout_marginTop="100dp"
+            android:layout_marginStart="210dp"
+            android:text="REJECT"
+            android:layout_marginLeft="210dp" />
+    </RelativeLayout>
+
+</LinearLayout>
+
+

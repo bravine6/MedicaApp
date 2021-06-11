@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:id="@+id/listView"/>
+
+    <EditText
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText"
+        android:hint="Enter Message To Be Encrypted"
+        android:layout_marginTop="510dp"
+        android:inputType="textMultiLine"/>
+
+
+    <Button
+        android:id="@+id/resendButton"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:onClick="sendButton"
+        android:layout_marginTop="510dp"
+        android:layout_marginStart="250dp"
+        android:text="SEND"
+        android:textColor="#FFF"
+        android:layout_marginLeft="250dp" />
+
+
+</RelativeLayout>
+

@@ -1,0 +1,2 @@
+rootProject.name = "DATABAZE ENCRYPTION"
+include ':app'

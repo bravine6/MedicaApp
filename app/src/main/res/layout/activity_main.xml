@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Welcom to MedApp"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="40sp"
+        android:paddingLeft="100dp"
+        android:paddingStart="0dp"
+        tools:ignore="HardcodedText,RtlSymmetry" />
+
+
+    <Button
+        android:id="@+id/patientStart"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/rounded_corner"
+        android:text="GET STARTED AS PATIENT"
+        android:textColor="@color/black" />
+    <Button
+        android:id="@+id/doctorStart"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_corner"
+        android:text="Get strated as doctor"
+        android:textColor="@color/black" />
+
+
+</LinearLayout>

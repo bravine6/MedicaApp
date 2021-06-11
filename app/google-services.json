@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "936023074964",
+    "project_id": "databaze-encryption",
+    "storage_bucket": "databaze-encryption.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:936023074964:android:991043aa171a29a483ac81",
+        "android_client_info": {
+          "package_name": "com.example.databazeencryption"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "936023074964-gdvsifvv0ned7qdm4dmf8eo20j4a2dug.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCt2OPoHtH7P1Hh_ZG3PPQjE2XuNQYlmog"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "936023074964-gdvsifvv0ned7qdm4dmf8eo20j4a2dug.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

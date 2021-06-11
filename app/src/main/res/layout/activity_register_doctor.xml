@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Doctor Register"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="50sp"
+        android:paddingLeft="50dp"
+        android:paddingStart="0dp"
+        tools:ignore="HardcodedText,RtlSymmetry" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstnamedoctor"
+        android:background="@drawable/sb"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:hint="First Name"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
+        android:inputType="text"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        tools:ignore="TextFields"
+        android:paddingStart="20dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/secondnamedoctor"
+        android:background="@drawable/sb"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:hint="Second Name"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
+        android:inputType="text"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        tools:ignore="TextFields"
+        android:paddingStart="20dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/emailregisterdoctor"
+        android:background="@drawable/sb"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:hint="Enter Email Address"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
+        android:inputType="text"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        tools:ignore="TextFields"
+        android:paddingStart="20dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/passwordregisterdoctor"
+        android:background="@drawable/sb"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:hint="Password"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
+        android:inputType="textPassword"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGISTER"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:id="@+id/registerdoctor" />
+
+
+    <TextView
+        android:id="@+id/loginpagedoctor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="17dp"
+        android:text="Have an account?Login"
+        android:textColor="@color/cardview_dark_background" />
+
+
+
+</LinearLayout>
