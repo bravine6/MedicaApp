@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:fillViewport="true">
+
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
-    android:layout_gravity="center"
-    android:gravity="center"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
@@ -19,6 +25,113 @@
         android:paddingLeft="50dp"
         android:paddingStart="0dp"
         tools:ignore="HardcodedText,RtlSymmetry" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/fname5"
+        android:background="@drawable/sb"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:hint="First Name"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        tools:ignore="TextFields"
+        android:paddingStart="20dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/surname"
+        android:background="@drawable/sb"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:hint="Surname"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
+        android:inputType="text"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        tools:ignore="TextFields"
+        android:paddingStart="20dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sname5"
+        android:background="@drawable/sb"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:hint="Last Name"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        tools:ignore="TextFields"
+        android:paddingStart="20dp" />
+
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/gender"
+        android:background="@drawable/sb"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:hint="Male or Female"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
+        android:inputType="text"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        tools:ignore="TextFields"
+        android:paddingStart="20dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/age"
+        android:background="@drawable/sb"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:hint="Age in Years"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
+        android:inputType="number"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        tools:ignore="TextFields"
+        android:paddingStart="20dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/all5"
+        android:background="@drawable/sb"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:hint="Do you have allergies? If yes , write and separate with comma, if none, type no"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_marginBottom="10dp"
+        android:inputType="textMultiLine"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        tools:ignore="TextFields"
+        android:paddingStart="20dp" />
+
+
+
 
     <EditText
         android:layout_width="match_parent"
@@ -102,3 +215,4 @@
 
 
 </LinearLayout>
+</ScrollView>

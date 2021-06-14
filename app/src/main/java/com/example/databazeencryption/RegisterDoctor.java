@@ -71,7 +71,7 @@ public class RegisterDoctor extends AppCompatActivity {
                         if(task.isSuccessful())
                         {
 
-                            DatabaseReference myRef = mydatabase.getReference("users").child(firebaseAuth.getCurrentUser().getUid()).child(firebaseAuth.getCurrentUser().getUid());
+                            DatabaseReference myRef = mydatabase.getReference("categories").child(firebaseAuth.getCurrentUser().getUid()).child(firebaseAuth.getCurrentUser().getUid());
                             Model2 model = new Model2(firebaseAuth.getCurrentUser().getUid(),usertype);
                             myRef.setValue(model);
                             startActivity(new Intent(getApplicationContext(), VerificationActivity2.class));

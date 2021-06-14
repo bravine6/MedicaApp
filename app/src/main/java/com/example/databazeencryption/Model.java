@@ -4,13 +4,19 @@ package com.example.databazeencryption;
 public class Model {
 
 
-    String id,disease,symptoms,medicine,status,email5,uid;
+    String id, fname5, sname5, all5, surname, gender, age, disease, symptoms, medicine, status, email5, uid;
 
-    public  Model()
-    {}
+    public Model() {
+    }
 
-    public Model(String id, String disease, String symptoms, String medicine, String status, String email5, String uid) {
+    public Model(String id, String fname5, String surname, String sname5, String gender, String age, String all5, String disease, String symptoms, String medicine, String status, String email5, String uid) {
         this.id = id;
+        this.fname5 = fname5;
+        this.surname = surname;
+        this.sname5 = sname5;
+        this.gender = gender;
+        this.age = age;
+        this.all5 = all5;
         this.disease = disease;
         this.symptoms = symptoms;
         this.medicine = medicine;
@@ -25,6 +31,54 @@ public class Model {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getFname5() {
+        return fname5;
+    }
+
+    public void setFname5(String fname5) {
+        this.fname5 = fname5;
+    }
+
+    public String getSname5() {
+        return sname5;
+    }
+
+    public void setSname5(String sname5) {
+        this.sname5 = sname5;
+    }
+
+    public String getAll5() {
+        return all5;
+    }
+
+    public void setAll5(String all5) {
+        this.all5 = all5;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
     }
 
     public String getDisease() {

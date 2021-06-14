@@ -53,6 +53,11 @@ public class PatientInfo extends AppCompatActivity {
             protected void onBindViewHolder(@NonNull Viewholder2 holder, int position, @NonNull Model model) {
                 holder.status.setText("Status"+ ":" +model.getStatus());
                 holder.email5.setText("Email to send Report"+ ":" +model.getEmail5());
+                holder.fname5.setText("Firstname"+ ":" +model.getFname5());
+                holder.surname.setText("Surname"+ ":" +model.getSurname());
+                holder.gender.setText("Gender" +":" +model.getGender());
+                holder.age.setText("Age" +":" +model.getAge());
+                holder.all5.setText("Allergies" +":" +model.getAll5());
                 holder.symtoms.setText("Symtoms Showed"+ ":" +model.getSymptoms());
                 holder.medicine.setText("Medicine Given"+ ":" +model.getMedicine());
                 holder.disease.setText("Suspected Disease"+ ":" +model.getDisease());
@@ -60,72 +65,30 @@ public class PatientInfo extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         String message = holder.report.getText().toString();
-                        if(holder.report.getText().toString().isEmpty())
-                        {
+                        if (holder.report.getText().toString().isEmpty()) {
                             holder.report.setError("Please fill the report");
                             return;
+                        } else {
+                            Model m = new Model(
+                                    model.getId(),
+                                    model.getFname5(),
+                                    model.getSurname(),
+                                    model.getSname5(),
+                                    model.getGender(),
+                                    model.getAge(),
+                                    model.getAll5(),
+                                    model.getDisease(),
+                                    model.getSymptoms(),
+                                    model.getMedicine(),
+                                    message,
+                                    model.getEmail5(),
+                                    model.getUid());
+                            myref.child(model.getUid()).setValue(m);
                         }
-                        Model m = new Model(
-                                model.getId(),
-                                model.getDisease(),
-                                model.getSymptoms(),
-                                model.getMedicine(),
-                                message,
-                                model.getEmail5(),
-                                model.getUid());
-                        myref.child(model.getUid()).setValue(m);
                     }
                 });
 
 
-                holder.app.setOnClickListener(new View.OnClickListener() {
-                    @SuppressLint("LongLogTag")
-                    @Override
-                    public void onClick(View v) {
-                        myref2 = FirebaseDatabase.getInstance().getReference().child("users").child(model.getUid()).child(model.getUid());
-                        myref3 = FirebaseDatabase.getInstance().getReference().child("users").child("application").child(model.getUid());
-                        Model model2 = new Model("id",
-                                model.getDisease(),
-                                model.getSymptoms(),
-                                model.getMedicine(),
-                                "APPROVED !",
-                                model.getEmail5(),
-                                model.getUid()
-                        );
-                        myref2.setValue(model2);
-                        Model model3 = new Model("id",
-                                model.getDisease(),
-                                model.getSymptoms(),
-                                model.getMedicine(),
-                                "You diagnosis report has been sent to the patient. Thank you!",
-                                model.getEmail5(),
-                                model.getUid()
-
-                        );
-                        myref3.setValue(model3);
-                        Toast.makeText(getApplicationContext(),"Diagnosis sent",Toast.LENGTH_SHORT).show();
-
-                        //  myref2= FirebaseDatabase.getInstance().getReference().child("users").child("application").child(editid);
-                        String[] TO = {model.getEmail5()};
-                        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-                        emailIntent.setData(Uri.parse("mailto:"));
-                        emailIntent.setType("text/plain");
-                        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-                        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Congratulations Course Approved");
-                        emailIntent.putExtra(Intent.EXTRA_TEXT, "Thankyou for Applying your courses" +model.getDisease()+ "" + "has been approved");
-                        try {
-                            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-                            finish();
-                            Log.i("Finished sending email...", "");
-                        } catch (android.content.ActivityNotFoundException ex) {
-                            Toast.makeText(getApplicationContext(), "There is no email client installed.", Toast.LENGTH_SHORT).show();
-                        }
-
-
-
-
-                    }
-                });
                 holder.dis.setOnClickListener(new View.OnClickListener() {
                     @SuppressLint("LongLogTag")
                     @Override
@@ -133,6 +96,12 @@ public class PatientInfo extends AppCompatActivity {
                         myref2 = FirebaseDatabase.getInstance().getReference().child("users").child(model.getUid()).child(model.getUid());
                         myref3 = FirebaseDatabase.getInstance().getReference().child("users").child("application").child(model.getUid());
                         Model model2 = new Model("id",
+                                model.getFname5(),
+                                model.getSurname(),
+                                model.getSname5(),
+                                model.getGender(),
+                                model.getAge(),
+                                model.getAll5(),
                                 model.getDisease(),
                                 model.getSymptoms(),
                                 model.getMedicine(),
@@ -142,6 +111,12 @@ public class PatientInfo extends AppCompatActivity {
                         );
                         myref2.setValue(model2);
                         Model model3 = new Model("id",
+                                model.getFname5(),
+                                model.getSurname(),
+                                model.getSname5(),
+                                model.getGender(),
+                                model.getAge(),
+                                model.getAll5(),
                                 model.getDisease(),
                                 model.getSymptoms(),
                                 model.getMedicine(),
@@ -158,7 +133,7 @@ public class PatientInfo extends AppCompatActivity {
                         emailIntent.setType("text/plain");
                         emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
                         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "We are sorry");
-                        emailIntent.putExtra(Intent.EXTRA_TEXT, "We appologize we cannot help you " +model.getDisease()+ "" + "Could not be approved");
+                        emailIntent.putExtra(Intent.EXTRA_TEXT, "We have analyzed your data and not able to give a response on  " +model.getDisease()+ "" + ".Please seek further help");
                         try {
                             startActivity(Intent.createChooser(emailIntent, "Send mail..."));
                             finish();

@@ -16,7 +16,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -35,16 +34,16 @@ public class RegisterPatient extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register_patient);
 
+
         firstnamepatient = findViewById(R.id.firstnamepatient);
         secondnamepatient = findViewById(R.id.secondnamepatient);
         emailregisterpatient= findViewById(R.id.emailregisterpatient);
-        passwordregisterpatient= findViewById(R.id.passwordregisterpatient);
+        passwordregisterpatient = findViewById(R.id.passwordregisterpatient);
         registerpatient= findViewById(R.id.registerpatient);
         loginpagepatient= findViewById(R.id.loginpagepatient);
         md = new ProgressDialog(this);
         firebaseAuth = FirebaseAuth.getInstance();
         mydatabase = FirebaseDatabase.getInstance();
-
 
         registerpatient.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +57,7 @@ public class RegisterPatient extends AppCompatActivity {
                     return;
                 }
                 if(emailregisterpatient.getText().toString().isEmpty()) {
-                   emailregisterpatient.setError("Required");
+                    emailregisterpatient.setError("Required");
                     return;
                 }
                 if (passwordregisterpatient.getText().toString().isEmpty()){
@@ -72,7 +71,8 @@ public class RegisterPatient extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if(task.isSuccessful())
                         {
-                            DatabaseReference myRef = mydatabase.getReference("users").child(firebaseAuth.getCurrentUser().getUid()).child(firebaseAuth.getCurrentUser().getUid());
+
+                            DatabaseReference myRef = mydatabase.getReference("categories").child(firebaseAuth.getCurrentUser().getUid()).child(firebaseAuth.getCurrentUser().getUid());
                             Model2 model = new Model2(firebaseAuth.getCurrentUser().getUid(),usertype);
                             myRef.setValue(model);
                             startActivity(new Intent(getApplicationContext(), VerificationActivity.class));
@@ -86,6 +86,8 @@ public class RegisterPatient extends AppCompatActivity {
                 });
             }
         });
+
+
 
         loginpagepatient.setOnClickListener(new View.OnClickListener() {
             @Override

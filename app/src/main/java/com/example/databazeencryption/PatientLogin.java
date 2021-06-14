@@ -27,7 +27,6 @@ import org.jetbrains.annotations.NotNull;
 
 public class PatientLogin extends AppCompatActivity {
 
-
     EditText emailaddresspatient,passwordpatient;
     private ProgressDialog md;
     Button loginpatient;
@@ -66,15 +65,15 @@ public class PatientLogin extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            DatabaseReference myref = firebaseDatabase.getReference("users").child(firebaseAuth.getCurrentUser().getUid()).child(firebaseAuth.getCurrentUser().getUid()).child("usertype");
+                            DatabaseReference myref = firebaseDatabase.getReference("categories").child(firebaseAuth.getCurrentUser().getUid()).child(firebaseAuth.getCurrentUser().getUid()).child("usertype");
                             myref.addValueEventListener(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                                    if(snapshot.getValue(String.class).equals("operator"))
+                                    if(snapshot.getValue(String.class).equals("patient"))
                                     {
                                         emailaddresspatient.setText("");
                                         passwordpatient.setText("");
-                                        startActivity(new Intent(getApplicationContext(),Sickness.class));
+                                        startActivity(new Intent(getApplicationContext(), Decider.class));
                                         md.dismiss();
                                     }
                                     else
@@ -83,22 +82,21 @@ public class PatientLogin extends AppCompatActivity {
                                         md.dismiss();
                                     }
 
-
                                 }
 
                                 @Override
                                 public void onCancelled(@NonNull @NotNull DatabaseError error) {
                                     Toast.makeText(getApplicationContext(),"Connection timed out",Toast.LENGTH_SHORT).show();
                                     md.dismiss();
-
                                 }
-                            });
 
+
+                            });
 
 
                         }
                         else {
-                            Toast.makeText(getApplicationContext(), "Incorrect Details", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Incorrect Details ", Toast.LENGTH_SHORT).show();
                             md.dismiss();
 
 
@@ -110,6 +108,8 @@ public class PatientLogin extends AppCompatActivity {
 
             }
         });
+
+
 
         registeraccountpatient.setOnClickListener(new View.OnClickListener() {
             @Override

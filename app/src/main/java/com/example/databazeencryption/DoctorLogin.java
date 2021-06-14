@@ -66,11 +66,11 @@ public class DoctorLogin extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            DatabaseReference myref = firebaseDatabase.getReference("users").child(firebaseAuth.getCurrentUser().getUid()).child(firebaseAuth.getCurrentUser().getUid()).child("usertype");
+                            DatabaseReference myref = firebaseDatabase.getReference("categories").child(firebaseAuth.getCurrentUser().getUid()).child(firebaseAuth.getCurrentUser().getUid()).child("usertype");
                             myref.addValueEventListener(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                                    if(snapshot.getValue(String.class).equals("users"))
+                                    if(snapshot.getValue(String.class).equals("doctor"))
                                     {
                                         emailaddressdoctor.setText("");
                                         passworddoctor.setText("");

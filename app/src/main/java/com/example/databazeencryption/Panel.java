@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +17,14 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
+import java.io.UnsupportedEncodingException;
+import java.security.InvalidKeyException;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.Cipher;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.spec.SecretKeySpec;
 
 public class Panel extends AppCompatActivity {
 
@@ -40,16 +50,75 @@ public class Panel extends AppCompatActivity {
     }
 
     private void fetch() {
-
+        Encryption e = new Encryption();
         myref= FirebaseDatabase.getInstance().getReference().child("users").child(firebaseAuth.getCurrentUser().getUid());
         options = new FirebaseRecyclerOptions.Builder<Model>().setQuery(myref,Model.class).build();
         adapter = new FirebaseRecyclerAdapter<Model, Viewholder1>(options) {
+            @SuppressLint("SetTextI18n")
             @Override
             protected void onBindViewHolder(@NonNull Viewholder1 holder, int position, @NonNull Model model) {
-                holder.status.setText("Status"+ ":" +model.getStatus());
-                holder.disease.setText("Disease"+ ":" +model.getDisease());
-                holder.symtoms.setText("Symptoms"+ ":" +model.getSymptoms());
-                holder.medicine.setText("Medicine"+ ":" +model.getMedicine());
+                try {
+                    holder.fname5.setText("FIRSTNAME"+ ":"+e.AESDecryptionMethod(model.getFname5()));
+                } catch (UnsupportedEncodingException unsupportedEncodingException) {
+                    unsupportedEncodingException.printStackTrace();
+                }
+                try {
+                    holder.surname.setText("SURNAME"+ ":"+e.AESDecryptionMethod(model.getSurname()));
+                } catch (UnsupportedEncodingException unsupportedEncodingException) {
+                    unsupportedEncodingException.printStackTrace();
+                }
+                try {
+                    holder.sname5.setText("LASTNAME"+ ":"+e.AESDecryptionMethod(model.getSname5()));
+                } catch (UnsupportedEncodingException unsupportedEncodingException) {
+                    unsupportedEncodingException.printStackTrace();
+                }
+                try {
+                    holder.gender.setText("GENDER"+ ":" +e.AESDecryptionMethod(model.getGender()));
+                } catch (UnsupportedEncodingException unsupportedEncodingException) {
+                    unsupportedEncodingException.printStackTrace();
+                }
+                try {
+                    holder.age.setText("AGE"+ ":"+ e.AESDecryptionMethod(model.getAge()));
+                } catch (UnsupportedEncodingException unsupportedEncodingException) {
+                    unsupportedEncodingException.printStackTrace();
+                }
+                try {
+                    holder.all5.setText("ALLERGIES"+ ":"+e.AESDecryptionMethod(model.getAll5()));
+                } catch (UnsupportedEncodingException unsupportedEncodingException) {
+                    unsupportedEncodingException.printStackTrace();
+                }
+                try {
+                    holder.status.setText("Status"+ ":" +e.AESDecryptionMethod(model.getStatus()));
+                } catch (UnsupportedEncodingException unsupportedEncodingException) {
+                    unsupportedEncodingException.printStackTrace();
+                }
+                try {
+                    holder.disease.setText("Disease"+ ":" +e.AESDecryptionMethod(model.getDisease()));
+                } catch (UnsupportedEncodingException unsupportedEncodingException) {
+                    unsupportedEncodingException.printStackTrace();
+                }
+                try {
+                    holder.symtoms.setText("Symptoms"+ ":" +e.AESDecryptionMethod(model.getSymptoms()));
+                } catch (UnsupportedEncodingException unsupportedEncodingException) {
+                    unsupportedEncodingException.printStackTrace();
+                }
+                try {
+                    holder.medicine.setText("Medicine"+ ":" +e.AESDecryptionMethod(model.getMedicine()));
+                } catch (UnsupportedEncodingException unsupportedEncodingException) {
+                    unsupportedEncodingException.printStackTrace();
+                }
+
+                // holder.medicine.setText("Medicine"+ ":" +model.getSymptoms());
+
+                holder.back2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent=new Intent(getApplicationContext(), Decider.class);
+                        startActivity(intent);
+
+
+                    }
+                });
             }
 
             @NonNull
@@ -63,4 +132,6 @@ public class Panel extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         
     }
+
+
 }

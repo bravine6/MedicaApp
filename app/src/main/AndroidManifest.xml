@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DATABAZEENCRYPTION">
-        <activity android:name=".VerificationActivity2"></activity>
+        <activity android:name=".Decider"></activity>
+        <activity android:name=".VerificationActivity2" />
         <activity android:name=".PatientInfo" />
         <activity android:name=".Panel" />
         <activity android:name=".Sickness" />

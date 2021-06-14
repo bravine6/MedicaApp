@@ -16,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Sickness extends AppCompatActivity {
 
-    EditText disease, symtoms, medicine, email5;
+    EditText disease, symtoms, medicine, email5,fname5, sname5, all5, surname, gender, age;
     Button diagnosis;
     FirebaseAuth firebaseAuth;
 
@@ -25,6 +25,12 @@ public class Sickness extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sickness);
 
+        fname5 = findViewById(R.id.fname5);
+        sname5 = findViewById(R.id.sname5);
+        all5 = findViewById(R.id.all5);
+        surname = findViewById(R.id.surname);
+        gender = findViewById(R.id.gender);
+        age = findViewById(R.id.age);
         disease = findViewById(R.id.disease);
         symtoms = findViewById(R.id.symtoms);
         medicine = findViewById(R.id.medicine);
@@ -37,6 +43,8 @@ public class Sickness extends AppCompatActivity {
             public void onClick(View view) {
                FirebaseDatabase database = FirebaseDatabase.getInstance();
                FirebaseDatabase database2 = FirebaseDatabase.getInstance();
+               Encryption en = new Encryption();
+
 
                DatabaseReference myRef = database.getReference("users").child(firebaseAuth.getCurrentUser().getUid()).child(firebaseAuth.getCurrentUser().getUid());
                 String id = myRef.push().getKey();
@@ -45,16 +53,24 @@ public class Sickness extends AppCompatActivity {
               String status = "Pending";
               String uid = firebaseAuth.getCurrentUser().getUid();
                Model model = new Model(id,
-                        disease.getText().toString().trim(),
-                      symtoms.getText().toString().trim(),
-                       medicine.getText().toString().trim(),
-                       status,
-                        email5.getText().toString(),
+                       en.AESEncryptionMethod(fname5.getText().toString().trim()),
+                       en.AESEncryptionMethod(surname.getText().toString().trim()),
+                       en.AESEncryptionMethod(sname5.getText().toString().trim()),
+                       en.AESEncryptionMethod(gender.getText().toString().trim()),
+                       en.AESEncryptionMethod(age.getText().toString().trim()),
+                       en.AESEncryptionMethod(all5.getText().toString().trim()),
+                       en.AESEncryptionMethod(disease.getText().toString().trim()),
+                      // disease.getText().toString().trim(),
+                       en.AESEncryptionMethod(symtoms.getText().toString().trim()),
+                       en.AESEncryptionMethod(medicine.getText().toString().trim()),
+                       en.AESEncryptionMethod(status),
+                       // status,
+                        en.AESEncryptionMethod(email5.getText().toString()),
                        uid);
                myRef2.setValue(model);
                myRef.setValue(model);
                 Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(),Panel.class));
+                startActivity(new Intent(getApplicationContext(), Panel.class));
             }
         });
     }

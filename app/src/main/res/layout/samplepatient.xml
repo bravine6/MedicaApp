@@ -26,6 +26,56 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
+                android:text="FIRSTNAME"
+                android:id="@+id/samplefname5"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="SURNAME"
+                android:id="@+id/samplesurname"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="LASTNAME"
+                android:id="@+id/samplesname5"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="GENDER"
+                android:id="@+id/samplegender"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="AGE"
+                android:id="@+id/sampleage"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="ALLERGIES"
+                android:id="@+id/sampleall5"
+                />
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
                 android:text="DISEASE"
                 android:id="@+id/sampledisease"
                 />
@@ -54,6 +104,20 @@
 
 
     </androidx.cardview.widget.CardView>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="BACK"
+            android:id="@+id/back2" />
+
+
+    </RelativeLayout>
 
 
 </LinearLayout>
