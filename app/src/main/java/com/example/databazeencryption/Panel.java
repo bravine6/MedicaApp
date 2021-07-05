@@ -51,27 +51,13 @@ public class Panel extends AppCompatActivity {
 
     private void fetch() {
         Encryption e = new Encryption();
-        myref= FirebaseDatabase.getInstance().getReference().child("users").child(firebaseAuth.getCurrentUser().getUid());
+        myref= FirebaseDatabase.getInstance().getReference("users").child(firebaseAuth.getCurrentUser().getUid());
         options = new FirebaseRecyclerOptions.Builder<Model>().setQuery(myref,Model.class).build();
         adapter = new FirebaseRecyclerAdapter<Model, Viewholder1>(options) {
             @SuppressLint("SetTextI18n")
             @Override
             protected void onBindViewHolder(@NonNull Viewholder1 holder, int position, @NonNull Model model) {
-                try {
-                    holder.fname5.setText("FIRSTNAME"+ ":"+e.AESDecryptionMethod(model.getFname5()));
-                } catch (UnsupportedEncodingException unsupportedEncodingException) {
-                    unsupportedEncodingException.printStackTrace();
-                }
-                try {
-                    holder.surname.setText("SURNAME"+ ":"+e.AESDecryptionMethod(model.getSurname()));
-                } catch (UnsupportedEncodingException unsupportedEncodingException) {
-                    unsupportedEncodingException.printStackTrace();
-                }
-                try {
-                    holder.sname5.setText("LASTNAME"+ ":"+e.AESDecryptionMethod(model.getSname5()));
-                } catch (UnsupportedEncodingException unsupportedEncodingException) {
-                    unsupportedEncodingException.printStackTrace();
-                }
+                
                 try {
                     holder.gender.setText("GENDER"+ ":" +e.AESDecryptionMethod(model.getGender()));
                 } catch (UnsupportedEncodingException unsupportedEncodingException) {
@@ -88,10 +74,11 @@ public class Panel extends AppCompatActivity {
                     unsupportedEncodingException.printStackTrace();
                 }
                 try {
-                    holder.status.setText("Status"+ ":" +e.AESDecryptionMethod(model.getStatus()));
+                   holder.status.setText("Status"+ ":" +e.AESDecryptionMethod(model.getStatus()));
                 } catch (UnsupportedEncodingException unsupportedEncodingException) {
-                    unsupportedEncodingException.printStackTrace();
-                }
+                   unsupportedEncodingException.printStackTrace();
+               }
+              //  holder.status.setText("Status"+":" +model.getStatus());
                 try {
                     holder.disease.setText("Disease"+ ":" +e.AESDecryptionMethod(model.getDisease()));
                 } catch (UnsupportedEncodingException unsupportedEncodingException) {

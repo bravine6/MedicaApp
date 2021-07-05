@@ -21,6 +21,10 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.io.UnsupportedEncodingException;
+
 public class PatientInfo extends AppCompatActivity {
 
     RecyclerView recyclerView;
@@ -28,8 +32,9 @@ public class PatientInfo extends AppCompatActivity {
     DatabaseReference myref;
     DatabaseReference myref2;
     DatabaseReference myref3;
-    private FirebaseRecyclerAdapter<Model,Viewholder2> adapter;
-    FirebaseRecyclerOptions<Model> options ;
+    DatabaseReference myref4;
+    private FirebaseRecyclerAdapter<Model3,Viewholder2> adapter;
+    FirebaseRecyclerOptions<Model3> options ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,22 +50,55 @@ public class PatientInfo extends AppCompatActivity {
         fetch();
     }
     private void fetch() {
-
+        Encryption e = new Encryption();
         myref= FirebaseDatabase.getInstance().getReference().child("users").child("application");
-        options = new FirebaseRecyclerOptions.Builder<Model>().setQuery(myref,Model.class).build();
-        adapter = new FirebaseRecyclerAdapter<Model, Viewholder2>(options) {
+        myref4 = FirebaseDatabase.getInstance().getReference().child("users");
+        options = new FirebaseRecyclerOptions.Builder<Model3>().setQuery(myref,Model3.class).build();
+        adapter = new FirebaseRecyclerAdapter<Model3, Viewholder2>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull Viewholder2 holder, int position, @NonNull Model model) {
-                holder.status.setText("Status"+ ":" +model.getStatus());
-                holder.email5.setText("Email to send Report"+ ":" +model.getEmail5());
-                holder.fname5.setText("Firstname"+ ":" +model.getFname5());
-                holder.surname.setText("Surname"+ ":" +model.getSurname());
-                holder.gender.setText("Gender" +":" +model.getGender());
-                holder.age.setText("Age" +":" +model.getAge());
-                holder.all5.setText("Allergies" +":" +model.getAll5());
-                holder.symtoms.setText("Symtoms Showed"+ ":" +model.getSymptoms());
-                holder.medicine.setText("Medicine Given"+ ":" +model.getMedicine());
-                holder.disease.setText("Suspected Disease"+ ":" +model.getDisease());
+            protected void onBindViewHolder(@NonNull @NotNull Viewholder2 holder, int position, @NonNull @NotNull Model3 model) {
+
+               // holder.status.setText("Status" +":"+model.getStatus());
+                try {
+                   holder.status.setText("Status"+ ":" +e.AESDecryptionMethod(model.getStatus()));
+                } catch (UnsupportedEncodingException unsupportedEncodingException) {
+                   unsupportedEncodingException.printStackTrace();
+               }
+                try {
+                    holder.email5.setText("Email to send Report"+ ":" +e.AESDecryptionMethod(model.getEmail5()));
+                } catch (UnsupportedEncodingException unsupportedEncodingException) {
+                    unsupportedEncodingException.printStackTrace();
+                }
+                try {
+                    holder.gender.setText("Gender" +":" +e.AESDecryptionMethod(model.getGender()));
+                } catch (UnsupportedEncodingException unsupportedEncodingException) {
+                    unsupportedEncodingException.printStackTrace();
+                }
+                try {
+                    holder.age.setText("Age" +":" +e.AESDecryptionMethod(model.getAge()));
+                } catch (UnsupportedEncodingException unsupportedEncodingException) {
+                    unsupportedEncodingException.printStackTrace();
+                }
+                try {
+                    holder.all5.setText("Allergies" +":" +e.AESDecryptionMethod(model.getAll5()));
+                } catch (UnsupportedEncodingException unsupportedEncodingException) {
+                    unsupportedEncodingException.printStackTrace();
+                }
+                try {
+                    holder.symtoms.setText("Symtoms Showed"+ ":" +e.AESDecryptionMethod(model.getSymptoms()));
+                } catch (UnsupportedEncodingException unsupportedEncodingException) {
+                    unsupportedEncodingException.printStackTrace();
+                }
+                try {
+                    holder.medicine.setText("Medicine Given"+ ":" +e.AESDecryptionMethod(model.getMedicine()));
+                } catch (UnsupportedEncodingException unsupportedEncodingException) {
+                    unsupportedEncodingException.printStackTrace();
+                }
+                try {
+                    holder.disease.setText("Suspected Disease"+ ":" +e.AESDecryptionMethod(model.getDisease()));
+                } catch (UnsupportedEncodingException unsupportedEncodingException) {
+                    unsupportedEncodingException.printStackTrace();
+                }
                 holder.app.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -69,91 +107,40 @@ public class PatientInfo extends AppCompatActivity {
                             holder.report.setError("Please fill the report");
                             return;
                         } else {
-                            Model m = new Model(
+                            Model3 m = new Model3(
                                     model.getId(),
-                                    model.getFname5(),
-                                    model.getSurname(),
-                                    model.getSname5(),
                                     model.getGender(),
                                     model.getAge(),
                                     model.getAll5(),
                                     model.getDisease(),
                                     model.getSymptoms(),
                                     model.getMedicine(),
-                                    message,
+                                    //en.AESEncryptionMethod(all5.getText().toString().trim()),
+                                  // e.AESEncryptionMethod(model.getReport()),
+                                    e.AESEncryptionMethod(message),
+                                  //  message,
                                     model.getEmail5(),
                                     model.getUid());
+                            myref4.child(model.getUid()).child(model.getUid()).setValue(m);
+                            Toast.makeText(getApplicationContext(),message, Toast.LENGTH_SHORT).show();
                             myref.child(model.getUid()).setValue(m);
                         }
                     }
                 });
 
 
-                holder.dis.setOnClickListener(new View.OnClickListener() {
-                    @SuppressLint("LongLogTag")
-                    @Override
-                    public void onClick(View v) {
-                        myref2 = FirebaseDatabase.getInstance().getReference().child("users").child(model.getUid()).child(model.getUid());
-                        myref3 = FirebaseDatabase.getInstance().getReference().child("users").child("application").child(model.getUid());
-                        Model model2 = new Model("id",
-                                model.getFname5(),
-                                model.getSurname(),
-                                model.getSname5(),
-                                model.getGender(),
-                                model.getAge(),
-                                model.getAll5(),
-                                model.getDisease(),
-                                model.getSymptoms(),
-                                model.getMedicine(),
-                                "REJECTED !",
-                                model.getEmail5(),
-                                model.getUid()
-                        );
-                        myref2.setValue(model2);
-                        Model model3 = new Model("id",
-                                model.getFname5(),
-                                model.getSurname(),
-                                model.getSname5(),
-                                model.getGender(),
-                                model.getAge(),
-                                model.getAll5(),
-                                model.getDisease(),
-                                model.getSymptoms(),
-                                model.getMedicine(),
-                                "I cannot Handle This. Please seek further  help!",
-                                model.getEmail5(),
-                                model.getUid()
 
-                        );
-                        myref3.setValue(model3);
-                        Toast.makeText(getApplicationContext(),"Sorry, I cannot handle this. ",Toast.LENGTH_SHORT).show();
-                        String[] TO = {model.getEmail5()};
-                        Intent emailIntent = new Intent(Intent.ACTION_SEND);
-                        emailIntent.setData(Uri.parse("mailto:"));
-                        emailIntent.setType("text/plain");
-                        emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
-                        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "We are sorry");
-                        emailIntent.putExtra(Intent.EXTRA_TEXT, "We have analyzed your data and not able to give a response on  " +model.getDisease()+ "" + ".Please seek further help");
-                        try {
-                            startActivity(Intent.createChooser(emailIntent, "Send mail..."));
-                            finish();
-                            Log.i("Finished sending email...", "");
-                        } catch (android.content.ActivityNotFoundException ex) {
-                            Toast.makeText(getApplicationContext(), "There is no email client installed.", Toast.LENGTH_SHORT).show();
-                        }
-
-
-                    }
-                });
             }
 
             @NonNull
+            @NotNull
             @Override
-            public Viewholder2 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            public Viewholder2 onCreateViewHolder(@NonNull @NotNull ViewGroup parent, int viewType) {
                 View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.sampledoctorpanel,parent,false);
                 return new Viewholder2(view);
             }
         };
+
         adapter.startListening();
         recyclerView.setAdapter(adapter);
 

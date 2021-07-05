@@ -16,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Sickness extends AppCompatActivity {
 
-    EditText disease, symtoms, medicine, email5,fname5, sname5, all5, surname, gender, age;
+    EditText disease, symtoms, medicine, email5, all5, gender, age;
     Button diagnosis;
     FirebaseAuth firebaseAuth;
 
@@ -25,10 +25,8 @@ public class Sickness extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sickness);
 
-        fname5 = findViewById(R.id.fname5);
-        sname5 = findViewById(R.id.sname5);
+
         all5 = findViewById(R.id.all5);
-        surname = findViewById(R.id.surname);
         gender = findViewById(R.id.gender);
         age = findViewById(R.id.age);
         disease = findViewById(R.id.disease);
@@ -50,12 +48,9 @@ public class Sickness extends AppCompatActivity {
                 String id = myRef.push().getKey();
                DatabaseReference myRef2 = database2.getReference("users").child("application").child(firebaseAuth.getCurrentUser().getUid());
                // push key to admin side also
-              String status = "Pending";
+              String status = "Pending. Wait for Results";
               String uid = firebaseAuth.getCurrentUser().getUid();
                Model model = new Model(id,
-                       en.AESEncryptionMethod(fname5.getText().toString().trim()),
-                       en.AESEncryptionMethod(surname.getText().toString().trim()),
-                       en.AESEncryptionMethod(sname5.getText().toString().trim()),
                        en.AESEncryptionMethod(gender.getText().toString().trim()),
                        en.AESEncryptionMethod(age.getText().toString().trim()),
                        en.AESEncryptionMethod(all5.getText().toString().trim()),
@@ -64,13 +59,14 @@ public class Sickness extends AppCompatActivity {
                        en.AESEncryptionMethod(symtoms.getText().toString().trim()),
                        en.AESEncryptionMethod(medicine.getText().toString().trim()),
                        en.AESEncryptionMethod(status),
-                       // status,
+                       //status,
                         en.AESEncryptionMethod(email5.getText().toString()),
                        uid);
                myRef2.setValue(model);
                myRef.setValue(model);
                 Toast.makeText(getApplicationContext(),"Success",Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(), Panel.class));
+                finish();
             }
         });
     }

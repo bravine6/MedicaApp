@@ -1,15 +1,12 @@
 package com.example.databazeencryption;
 
+public class Model3 {
+    String id,all5,gender, age, disease, symptoms, medicine, status, email5, uid;
 
-public class Model {
+    public Model3()
+    {}
 
-
-    String id,  all5,  gender, age, disease, symptoms, medicine, status, email5, uid;
-
-    public Model() {
-    }
-
-    public Model(String id, String all5, String gender, String age, String disease, String symptoms, String medicine, String status, String email5, String uid) {
+    public Model3(String id, String all5, String gender, String age, String disease, String symptoms, String medicine, String status, String email5, String uid) {
         this.id = id;
         this.all5 = all5;
         this.gender = gender;

@@ -29,64 +29,11 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/fname5"
-        android:background="@drawable/sb"
-        android:paddingLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:hint="First Name"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:layout_marginBottom="10dp"
-        android:inputType="textPersonName"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        tools:ignore="TextFields"
-        android:paddingStart="20dp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/surname"
-        android:background="@drawable/sb"
-        android:paddingLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:hint="Surname"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:layout_marginBottom="10dp"
-        android:inputType="text"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        tools:ignore="TextFields"
-        android:paddingStart="20dp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/sname5"
-        android:background="@drawable/sb"
-        android:paddingLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:hint="Last Name"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:layout_marginBottom="10dp"
-        android:inputType="textPersonName"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        tools:ignore="TextFields"
-        android:paddingStart="20dp" />
-
-
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/gender"
         android:background="@drawable/sb"
         android:paddingLeft="20dp"
         android:layout_marginTop="30dp"
-        android:hint="Male or Female"
+        android:hint="Your Gender e.g. 'male' "
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
         android:layout_marginBottom="10dp"

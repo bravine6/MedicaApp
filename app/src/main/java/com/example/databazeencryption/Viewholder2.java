@@ -10,9 +10,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class Viewholder2 extends RecyclerView.ViewHolder{
 
-    TextView disease,symtoms,email5,medicine,status, fname5, sname5, all5,surname, gender,age;
+    TextView disease,symtoms,email5,medicine,status,all5, gender,age;
     EditText report;
-    Button app,dis;
+    Button app;
     public Viewholder2(@NonNull View itemView) {
         super(itemView);
         disease = itemView.findViewById(R.id.admindisease);
@@ -21,13 +21,9 @@ public class Viewholder2 extends RecyclerView.ViewHolder{
         email5= itemView.findViewById(R.id.adminemail);
         medicine = itemView.findViewById(R.id.adminmedicine);
         status = itemView.findViewById(R.id.adminstatus);
-        fname5 = itemView.findViewById(R.id.samplefname5);
-        sname5 = itemView.findViewById(R.id.samplesname5);
-        all5 = itemView.findViewById(R.id.sampleall5);
-        gender = itemView.findViewById(R.id.samplegender);
-        age = itemView.findViewById(R.id.sampleage);
-        surname = itemView.findViewById(R.id.samplesurname);
+        all5 = itemView.findViewById(R.id.adminall5);
+        gender = itemView.findViewById(R.id.admingender);
+        age = itemView.findViewById(R.id.adminage);
         app = itemView.findViewById(R.id.app);
-        dis = itemView.findViewById(R.id.dis);
     }
 }
