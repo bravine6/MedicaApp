@@ -37,7 +37,17 @@
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:background="@drawable/rounded_corner"
-        android:text="Get strated as doctor"
+        android:text="GET STARTED AS A GENERAL PRACTITIONER"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/conStart"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_corner"
+        android:text="GET STARTED AS A CONSULTANT"
         android:textColor="@color/black" />
 
 

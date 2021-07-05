@@ -13,51 +13,17 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="General Practitioner Register"
+        android:text="Consultant Login"
         android:textColor="@color/cardview_dark_background"
         android:textSize="50sp"
         android:paddingLeft="50dp"
-        android:paddingStart="0dp"
+        android:paddingStart="50dp"
         tools:ignore="HardcodedText,RtlSymmetry" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/firstnamedoctor"
-        android:background="@drawable/sb"
-        android:paddingLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:hint="First Name"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:layout_marginBottom="10dp"
-        android:inputType="text"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        tools:ignore="TextFields"
-        android:paddingStart="20dp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/secondnamedoctor"
-        android:background="@drawable/sb"
-        android:paddingLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:hint="Second Name"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:layout_marginBottom="10dp"
-        android:inputType="text"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        tools:ignore="TextFields"
-        android:paddingStart="20dp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/emailregisterdoctor"
+        android:id="@+id/emailaddresscon"
         android:background="@drawable/sb"
         android:paddingLeft="20dp"
         android:layout_marginTop="30dp"
@@ -74,7 +40,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/passwordregisterdoctor"
+        android:id="@+id/paswwordcon"
         android:background="@drawable/sb"
         android:paddingLeft="20dp"
         android:layout_marginTop="30dp"
@@ -90,20 +56,21 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="REGISTER"
+        android:text="Login"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:id="@+id/registerdoctor" />
+        android:id="@+id/logincon" />
+
 
 
     <TextView
-        android:id="@+id/loginpagedoctor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="17dp"
-        android:text="Have an account?Login"
-        android:textColor="@color/cardview_dark_background" />
+        android:text="Don't have an account?Register"
+        android:layout_marginTop="189dp"
+        android:textColor="@color/cardview_dark_background"
+        android:id="@+id/registeraccountcon"
+        android:layout_gravity="center"/>
 
 
 

@@ -13,7 +13,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="General Practitioner Register"
+        android:text="Consultant Register"
         android:textColor="@color/cardview_dark_background"
         android:textSize="50sp"
         android:paddingLeft="50dp"
@@ -23,7 +23,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/firstnamedoctor"
+        android:id="@+id/firstnamecon"
         android:background="@drawable/sb"
         android:paddingLeft="20dp"
         android:layout_marginTop="30dp"
@@ -40,7 +40,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/secondnamedoctor"
+        android:id="@+id/secondnamecon"
         android:background="@drawable/sb"
         android:paddingLeft="20dp"
         android:layout_marginTop="30dp"
@@ -57,7 +57,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/emailregisterdoctor"
+        android:id="@+id/emailregistercon"
         android:background="@drawable/sb"
         android:paddingLeft="20dp"
         android:layout_marginTop="30dp"
@@ -74,7 +74,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/passwordregisterdoctor"
+        android:id="@+id/passwordregistercon"
         android:background="@drawable/sb"
         android:paddingLeft="20dp"
         android:layout_marginTop="30dp"
@@ -93,11 +93,11 @@
         android:text="REGISTER"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:id="@+id/registerdoctor" />
+        android:id="@+id/registercon" />
 
 
     <TextView
-        android:id="@+id/loginpagedoctor"
+        android:id="@+id/loginpagecon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
