@@ -12,7 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DATABAZEENCRYPTION">
-        <activity android:name=".ConsultantPage"></activity>
+        <activity android:name=".AdminPage"></activity>
+        <activity android:name=".AdminLogin" />
+        <activity android:name=".ConsultantPage" />
         <activity android:name=".RegisterConsultant" />
         <activity android:name=".ConsultantLogin" />
         <activity android:name=".Decider" />

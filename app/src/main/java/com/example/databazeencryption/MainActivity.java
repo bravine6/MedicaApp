@@ -21,7 +21,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button patientStart,doctorStart,conStart;
+    Button patientStart,doctorStart,conStart, admin90;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         patientStart=findViewById(R.id.patientStart);
+        admin90 = findViewById(R.id.admin90);
         conStart = findViewById(R.id.conStart);
         doctorStart=findViewById(R.id.doctorStart);
         patientStart.setOnClickListener(new View.OnClickListener() {
@@ -50,6 +51,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent doctorIntent=new Intent(getApplicationContext(),ConsultantLogin.class);
+                startActivity(doctorIntent);
+            }
+        });
+        admin90.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent doctorIntent=new Intent(getApplicationContext(), AdminLogin.class);
                 startActivity(doctorIntent);
             }
         });
