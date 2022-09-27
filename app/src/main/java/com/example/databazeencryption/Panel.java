@@ -39,7 +39,7 @@ public class Panel extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_panel);
 
-        recyclerView = findViewById(R.id.people);
+        recyclerView = findViewById(R.id.people2);
         firebaseAuth = FirebaseAuth.getInstance();
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(Panel.this);
         recyclerView.setHasFixedSize(true);

@@ -61,15 +61,7 @@
         android:text="GET STARTED AS A CONSULTANT"
         android:textColor="@color/black" />
 
-    <Button
-        android:id="@+id/admin90"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/rounded_corner"
-        android:text="ADMIN"
-        android:textColor="@color/black" />
+
 
 
 </LinearLayout>

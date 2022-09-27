@@ -1,6 +1,7 @@
 package com.example.databazeencryption;
 
 
+
 public class Model2 {
     String uid;
     String usertype;

@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.209375" />
+        <entry key="app/src/main/res/layout/activity_admin_page.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_consultant_page.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_data.xml" value="0.11458333333333333" />
+        <entry key="app/src/main/res/layout/activity_main2.xml" value="0.11458333333333333" />
+        <entry key="app/src/main/res/layout/activity_patient_info.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_patient_login.xml" value="0.16394927536231885" />
+        <entry key="app/src/main/res/layout/activity_sickness.xml" value="0.11458333333333333" />
+        <entry key="app/src/main/res/layout/adminpanel.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/sampledoctorpanel.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/samplepatient.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

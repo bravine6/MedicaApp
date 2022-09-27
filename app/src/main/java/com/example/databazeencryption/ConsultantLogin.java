@@ -67,7 +67,7 @@ public class ConsultantLogin extends AppCompatActivity {
                             myref.addValueEventListener(new ValueEventListener() {
                                 @Override
                                 public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
-                                    if(snapshot.getValue(String.class).equals("patient"))
+                                    if(snapshot.getValue(String.class).equals("consultant"))
                                     {
                                         emailaddresscon.setText("");
                                         passwordcon.setText("");

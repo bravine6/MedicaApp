@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+    <androidx.cardview.widget.CardView
+
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20px"
+        android:layout_marginRight="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:text="ADMIN PANEL"
+                android:textSize="30dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="NUMBER OF PATIENTS"
+                android:textStyle="bold"
+                android:id="@+id/patient0"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="NUMBER OF DOTORS"
+                android:textStyle="bold"
+                android:id="@+id/doctor0"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="NUMBER OF TOTAL USERS"
+                android:textStyle="bold"
+                android:id="@+id/total0"
+                />
+
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>
+
+
